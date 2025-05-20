@@ -1,7 +1,6 @@
 package com.example.java_spring.repository;
 
 import com.example.java_spring.domain.Member;
-import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
@@ -18,7 +17,7 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findById(Long id) {
+    public List<Member> findById(Long id) {
         Member member = store.get(id);
         return Optional.ofNullable(member); //optional: to handle if return value is null
     }
