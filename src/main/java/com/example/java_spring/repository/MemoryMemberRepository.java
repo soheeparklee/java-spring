@@ -19,7 +19,7 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public List<Member> findById(Long id) {
         Member member = store.get(id);
-        return Optional.ofNullable(member); //optional: to handle if return value is null
+        return null; //optional: to handle if return value is null
     }
 
     @Override

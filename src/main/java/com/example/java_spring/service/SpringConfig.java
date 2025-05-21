@@ -1,5 +1,6 @@
 package com.example.java_spring.service;
 
+import com.example.java_spring.aop.TimeTraceApp;
 import com.example.java_spring.repository.JdbcTemplateMemberRepository;
 import com.example.java_spring.repository.MemberRepository;
 import com.example.java_spring.repository.MemoryMemberRepository;
@@ -25,5 +26,11 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository(){
         return new JdbcTemplateMemberRepository(dataSource);
+    }
+
+    @Bean
+    public TimeTraceApp timeTraceApp(){
+        return new TimeTraceApp();
+
     }
 }
