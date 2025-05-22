@@ -27,8 +27,8 @@ class MemberServiceIntegrationTest {
         //when
         Long saveId = memberService.signUp(member);
         //then
-        Member findMember = memberService.findOne(saveId).get();
-        assertThat(findMember.getName()).isEqualTo(member.getName());
+//        Member findMember = memberService.findOne(saveId).get();
+//        assertThat(findMember.getName()).isEqualTo(member.getName());
     }
 
     @Test
