@@ -9,24 +9,31 @@ import com.example.spring_basic.member.MemberServiceImpl;
 import com.example.spring_basic.member.MemoryMemberRepository;
 import com.example.spring_basic.order.OrderService;
 import com.example.spring_basic.order.OrderServiceImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class AppConfig {
 
+    @Bean
     public MemberService memberService(){ //role, interface
         return new MemberServiceImpl(memberRepository());
     }
 
+    @Bean
     public OrderService orderService(){ //role, interface
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy());
     }
 
-    private MemberRepository memberRepository() {
+    @Bean
+    public MemberRepository memberRepository() {
         return new MemoryMemberRepository(); //implement specific class
     }
 
-    private DiscountPolicy discountPolicy() {
+    @Bean
+    public DiscountPolicy discountPolicy() {
         //return new FixDiscountPolicy(); //implement specific class
         return new RateDiscountPolicy();
     }
