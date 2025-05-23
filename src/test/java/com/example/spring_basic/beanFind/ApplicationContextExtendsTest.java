@@ -46,7 +46,7 @@ public class ApplicationContextExtendsTest {
     @Test
     @DisplayName("get all bean by object ")
     void findObject(){
-        Map<String, Object> beansOfType = ac.getBeansOfType(Object.class);
+        ac.getBeansOfType(Object.class);
     }
 
 
