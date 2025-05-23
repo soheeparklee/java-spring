@@ -10,11 +10,12 @@ import com.example.spring_basic.order.OrderServiceImpl;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member memberA = new Member(1L, "memberA", Grade.VIP);
         memberService.join(memberA);
 
-        OrderService orderService = new OrderServiceImpl();
+        OrderService orderService = appConfig.orderService();
         Order orderResult = orderService.createOrder(memberA.getId(), "milk", 5000);
         System.out.println("orderResult = " + orderResult);
 
