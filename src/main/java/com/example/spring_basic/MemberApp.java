@@ -16,6 +16,7 @@ public class MemberApp {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
 
+
         Member memberA = new Member(1L, "memberA", Grade.VIP);
         memberService.join(memberA);
 
