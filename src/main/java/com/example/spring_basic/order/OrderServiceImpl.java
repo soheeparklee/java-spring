@@ -11,9 +11,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OrderServiceImpl implements OrderService {
-    //private final MemberRepository repository = new MemoryMemberRepository();
-    //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-    //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
+
+//    @Autowired private  MemberRepository repository;
+//    @Autowired private  DiscountPolicy discountPolicy;
+
+//    private final MemberRepository repository = new MemoryMemberRepository();
+//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+//    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     private final MemberRepository repository;
     private final DiscountPolicy discountPolicy;
@@ -23,6 +27,8 @@ public class OrderServiceImpl implements OrderService {
         this.repository = repository;
         this.discountPolicy = discountPolicy;
     }
+
+
 
     @Override
     public Order createOrder(Long memberId, String name, int price) {
