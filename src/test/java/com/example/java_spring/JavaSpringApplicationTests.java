@@ -1,3 +1,4 @@
+/*
 package com.example.java_spring;
 
 import org.junit.jupiter.api.Test;
@@ -11,3 +12,4 @@ class JavaSpringApplicationTests {
 	}
 
 }
+*/

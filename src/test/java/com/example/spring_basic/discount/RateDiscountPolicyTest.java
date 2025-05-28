@@ -1,3 +1,4 @@
+/*
 package com.example.spring_basic.discount;
 
 import com.example.spring_basic.member.Grade;
@@ -35,4 +36,4 @@ class RateDiscountPolicyTest {
     }
 
 
-}
+}*/

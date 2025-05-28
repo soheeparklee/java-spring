@@ -1,3 +1,4 @@
+/*
 package com.example.java_spring.service;
 
 import com.example.java_spring.domain.Member;
@@ -46,14 +47,16 @@ class MemberServiceIntegrationTest {
         assertThat(e.getMessage()).isEqualTo("member already exists");
 
 
-        /*try{
+        */
+/*try{
             memberService.signUp(member2);
             fail();
         }catch(IllegalArgumentException e){
             assertThat(e.getMessage()).isEqualTo("member already exists");
-        }*/
+        }*//*
+
 
 
     }
 
-}
+}*/

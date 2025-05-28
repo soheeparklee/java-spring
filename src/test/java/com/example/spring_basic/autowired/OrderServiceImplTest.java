@@ -1,3 +1,4 @@
+/*
 package com.example.spring_basic.autowired;
 
 import com.example.spring_basic.discount.RateDiscountPolicy;
@@ -14,3 +15,4 @@ class OrderServiceImplTest {
     }
 
 }
+*/

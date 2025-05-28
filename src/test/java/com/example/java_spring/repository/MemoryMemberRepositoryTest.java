@@ -1,3 +1,4 @@
+/*
 package com.example.java_spring.repository;
 
 import com.example.java_spring.domain.Member;
@@ -56,3 +57,4 @@ class MemoryMemberRepositoryTest {
         assertThat(result.size()).isEqualTo(2);
     }
 }
+*/

@@ -8,13 +8,24 @@ import com.example.spring_basic.member.*;
 import com.example.spring_basic.order.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
+
+//@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
     private final MemberRepository repository;
     private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository repository, @Qualifier("fixDiscountPolicy") DiscountPolicy discountPolicy) {
+        this.repository = repository;
+        this.discountPolicy = discountPolicy;
+    }
+/*    public OrderServiceImpl(MemberRepository repository, DiscountPolicy rateDiscountPolicy) {
+        this.repository = repository;
+        this.discountPolicy = rateDiscountPolicy;
+    }*/
 
     @Override
     public Order createOrder(Long memberId, String name, int price) {

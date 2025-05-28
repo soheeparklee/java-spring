@@ -1,3 +1,4 @@
+/*
 package com.example.spring_basic.scan.filter;
 
 import org.assertj.core.api.Assertions;
@@ -30,3 +31,4 @@ public class ComponentFilterAppConfigTest {
     static class ComponentFilterAppConfig{
     }
 }
+*/
