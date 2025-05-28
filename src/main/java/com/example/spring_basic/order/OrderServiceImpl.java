@@ -18,7 +18,7 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository repository;
     private final DiscountPolicy discountPolicy;
 
-    public OrderServiceImpl(MemberRepository repository, @Qualifier("fixDiscountPolicy") DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository repository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
         this.repository = repository;
         this.discountPolicy = discountPolicy;
     }
