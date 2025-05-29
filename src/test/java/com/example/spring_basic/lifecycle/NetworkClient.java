@@ -1,8 +1,10 @@
 package com.example.spring_basic.lifecycle;
 
 import org.apache.catalina.util.ToStringUtil;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-public class NetworkClient {
+public class NetworkClient implements InitializingBean, DisposableBean {
     private String url;
     public NetworkClient(){
         System.out.println("call constructor, url: " + url);
@@ -24,5 +26,18 @@ public class NetworkClient {
 
     public void disconnect(){
         System.out.println("close: " + url);
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception { //의존관계 주입이 끝나면
+        System.out.println("afterPropertiesSet ");
+        connect();
+        call("initialization mesage");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("destroy");
+        disconnect();
     }
 }
