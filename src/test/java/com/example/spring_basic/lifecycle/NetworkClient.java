@@ -1,8 +1,7 @@
 package com.example.spring_basic.lifecycle;
 
-import org.apache.catalina.util.ToStringUtil;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 public class NetworkClient {
     private String url;
@@ -28,15 +27,5 @@ public class NetworkClient {
         System.out.println("close: " + url);
     }
 
-    public void init() { //의존관계 주입이 끝나면
-        System.out.println("afterPropertiesSet ");
-        connect();
-        call("initialization mesage");
-    }
 
-
-    public void close()  {
-        System.out.println("destroy");
-        disconnect();
-    }
 }
