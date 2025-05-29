@@ -4,7 +4,7 @@ import org.apache.catalina.util.ToStringUtil;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class NetworkClient {
     private String url;
     public NetworkClient(){
         System.out.println("call constructor, url: " + url);
@@ -28,15 +28,14 @@ public class NetworkClient implements InitializingBean, DisposableBean {
         System.out.println("close: " + url);
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception { //의존관계 주입이 끝나면
+    public void init() { //의존관계 주입이 끝나면
         System.out.println("afterPropertiesSet ");
         connect();
         call("initialization mesage");
     }
 
-    @Override
-    public void destroy() throws Exception {
+
+    public void close()  {
         System.out.println("destroy");
         disconnect();
     }
