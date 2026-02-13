@@ -18,19 +18,18 @@ public class SpringConfig {
         return new MemberService(memberRepository());
     }
 
-    //@Bean
-//    public MemberRepository memberRepository(){
-//        return new MemoryMemberRepository();
-//    }
-
     @Bean
     public MemberRepository memberRepository(){
-        return new JdbcTemplateMemberRepository(dataSource);
+        return new MemoryMemberRepository();
     }
 
-    @Bean
-    public TimeTraceApp timeTraceApp(){
-        return new TimeTraceApp();
+//    @Bean
+//    public MemberRepository memberRepository(){
+//        return new JdbcTemplateMemberRepository(dataSource);
+//    }
 
-    }
+//    @Bean
+//    public TimeTraceApp timeTraceApp(){
+//        return new TimeTraceApp();
+//    }
 }
